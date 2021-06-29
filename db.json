@@ -1,0 +1,14 @@
+{
+  "Grupos": [
+      {"id": 1, "nome": "Compras", "criado":"2021-06-28 19:00:44","concluido":""},
+      {"id": 2, "nome": "Tarefas", "criado":"2021-06-28 19:00:44","concluido":"2021-06-28 19:30:44"},
+      {"id": 2, "nome": "Exercicios", "criado":"2021-06-28 19:00:44","concluido":""}
+  ],
+  "Tarefas":[
+      {"id":1,"grupos_id":1,"nome_tarefa":"Comprar arroz","criado":"2021-06-28 19:00:44","concluido":"2021-07-28 9:00:44"},
+      {"id":2,"grupos_id":1,"nome_tarefa":"Comprar feijao","criado":"2021-06-28 19:00:44","concluido":""},
+      {"id":3,"grupos_id":2,"nome_tarefa":"Lavar a louça","criado":"2021-06-28 19:00:44","concluido":"2021-07-28 13:00:44"},
+      {"id":4,"grupos_id":3,"nome_tarefa":"Fazer abdominais","criado":"2021-06-28 19:00:44","concluido":""}
+  ]
+
+}
