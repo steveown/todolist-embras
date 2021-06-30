@@ -16,8 +16,8 @@ export class TarefaService extends CrudService<Tarefa> {
     super(http, '/tarefas/');
    }
   
-   buscarTarefasID(id: number): Observable<Retorno> {
-    return this.http.get<Retorno>(this.url + '/tarefas/' + id).pipe(take(1));
+   getTarefas(): Observable<Tarefa[]> {
+    return this.http.get<Tarefa[]>(this.url + '/tarefas/');
   }
 
 }

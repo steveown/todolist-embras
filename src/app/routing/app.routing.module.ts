@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-
 import { NaoEncontradaComponent } from '../erros/nao-encontrada/nao-encontrada.component';
 
 const rotas: Routes = [

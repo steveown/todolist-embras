@@ -7,7 +7,7 @@ export class Grupo {
 
     constructor(obj:any) {
         this.id = obj.id;
-        this.nome = obj.nome_tarefa;
+        this.nome = obj.nome;
         this.criado = obj.criado;
         this.concluido = obj.concluido;
     }

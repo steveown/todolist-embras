@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
 import { CrudService } from 'src/app/shared/crud.service';
 import { Retorno } from 'src/app/shared/retorno';
 import { Observable } from 'rxjs';
@@ -16,8 +15,10 @@ export class GrupoService extends CrudService<Grupo> {
     super(http, '/grupos/');
    }
   
-   buscarGruposID(id: number): Observable<Retorno> {
-    return this.http.get<Retorno>(this.url + '/grupos/' + id).pipe(take(1));
+   getGrupos(): Observable<Grupo[]> {
+    return this.http.get<Grupo[]>(this.url + '/grupos/');
   }
+
+  
 
 }

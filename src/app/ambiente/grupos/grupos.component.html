@@ -1,42 +1,59 @@
+
+
 <div class="container">
-    <h1>{{title}}</h1>
-    
+       
     <div class="list-container">
-  
-      <div class="todo-container column-container">
+      <br>
+      <form (submit)="addGrupo()">
+        <input 
+        type="text" 
+        name="novo_grupo"
+        placeholder="Nome do Grupo"
+        class="form-control"
+        [(ngModel)]="novo_grupo"
+        >
+        <button  type="submit" value="Adicionar Grupo" class="btn btn-dark">Adicionar</button>
+      </form>
+     
+      <div class="todo-container column-container" *ngFor="let grupo of grupos">
+     
         <div class="list"
              cdkDropList
              #todoList="cdkDropList"
              [cdkDropListData]="tarefa"
              [cdkDropListConnectedTo]="[doneList]"
              (cdkDropListDropped)="onDrop($event)">
-          <h2>Tech to learn</h2>
+          <h5 class="display-2">{{grupo.nome}}</h5>
+          
           <mat-card *ngFor="let tarefa of tarefas" cdkDrag>
+            <ng-template [ngIf]="tarefa.grupos_id === grupo.id">
             <mat-card-header>
               <mat-card-title>{{tarefa.nome_tarefa}}</mat-card-title>
             </mat-card-header>
+            <button type="button"  class="btn btn-dark position-relative" (click)="removeTarefa(tarefa.id)">Remover</button>
+          </ng-template>
           </mat-card>
+           
+            <form (submit)="addTarefa(grupo.id)">
+            <div class="input-group">
+              <input 
+              type="text" 
+              name="nova_tarefa"
+              placeholder="Nome da Tarefa"
+              class="form-control"
+              [(ngModel)]="nova_tarefa"
+              >
+              <div class="input-group-append">
+              <button  type="submit" value="Adicionar Tarefa" class="btn btn-dark btn-outline-secondary" >Adicionar</button>
+              <button type="button"  class="btn btn-dark btn-outline-secondary" (click)="onDeleteGrupo()">Remover</button>
+              </div>
+            </div>
+            </form>
+           
+          </div>
+
         </div>
       </div>
-  
-      <div class="done-container column-container">
-        <div class="list"
-             cdkDropList
-             #doneList="cdkDropList"
-             [cdkDropListData]="completed"
-             [cdkDropListConnectedTo]="todoList"
-             (cdkDropListDropped)="onDrop($event)">
-          <h2>Tech learned</h2>
-          <mat-card *ngFor="let complete of completed" cdkDrag>
-            <mat-card-header>
-              <mat-card-title>{{complete.name}}</mat-card-title>
-              <mat-card-subtitle>{{complete.category}}</mat-card-subtitle>
-            </mat-card-header>
-          </mat-card>
-        </div>
-      </div>
-  
     </div>
-  </div>
   
   
