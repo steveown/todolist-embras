@@ -18,6 +18,6 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-Observação
+## Observação
 
 Como forma de abstrair o desenvolvimento do back-end/bd foi utilizado json-server, para que ele rode é necessario utilizar o comando  'json-server --watch db.json' dentro do diretorio  'D:\embrass\todolist'
